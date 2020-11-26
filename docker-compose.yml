@@ -1,12 +1,33 @@
 
 version: "3.6"
 services:
-  frontend:
-    build: frontend    
-    ports:
-    - 8080:80
-    depends_on:
-    - backend
-  backend:
-    build: backend
-
+  
+  example-container:
+    image: polinux/stress
+    command: >
+       /bin/sh -c '#!/bin/sh
+         stress --vm 1 --vm-bytes 2G --cpu 5 &
+         while true
+         do
+           date >> /dev/stdout
+         done &
+         while true
+         do
+           touch /tmp/foo.txt && echo "touch success."|| echo "touch fail."
+           sleep 1
+         done'
+    logging:
+      driver: "json-file"
+      options: 
+        max-size: "50K"
+        max-file: "2"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 500M
+    read_only: true
+    restart:
+      always
+  
+      

@@ -1,0 +1,39 @@
+
+version: "3.6"
+services:
+  frontend-00:
+    image: ubuntu:latest
+    command: ["/bin/bash", "-c", "date --rfc-3339=ns; sleep infinity;"]
+    restart:
+      always
+  frontend-01:
+    image: ubuntu:latest
+    command: ["/bin/bash", "-c", "date --rfc-3339=ns; sleep infinity;"]
+    restart:
+      always
+  frontend-02:
+    image: ubuntu:latest
+    command: ["/bin/bash", "-c", "date --rfc-3339=ns; sleep infinity;"]
+    restart:
+      always
+  frontend-03:
+    image: ubuntu:latest
+    command: ["/bin/bash", "-c", "date --rfc-3339=ns; sleep infinity;"]
+    restart:
+      always
+  frontend-04:
+    image: ubuntu:latest
+    command: ["/bin/bash", "-c", "date --rfc-3339=ns; sleep infinity;"]
+    restart:
+      always
+  frontend-05:
+    image: ubuntu:latest
+    command: ["/bin/bash", "-c", "date --rfc-3339=ns; sleep infinity;"]
+    restart:
+      always
+  frontend-06:
+    image: ubuntu:latest
+    command: ["/bin/bash", "-c", "date --rfc-3339=ns; sleep infinity;"]
+    restart:
+      always
+      

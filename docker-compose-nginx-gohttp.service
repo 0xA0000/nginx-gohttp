@@ -1,0 +1,18 @@
+[Unit]
+Description=Docker Compose Application Service
+Requires=docker.service
+After=docker.service
+PartOf=docker.service
+BindsTo=docker.service
+
+[Service]
+Type=simple
+WorkingDirectory=/srv/http/ORG004-RIVTOWER/workspace/nginx-gohttp
+ExecStart=/usr/local/bin/docker-compose up
+ExecStop=/usr/local/bin/docker-compose down
+Restart=always
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target docker.service
+
